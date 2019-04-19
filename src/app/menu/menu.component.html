@@ -1,0 +1,2 @@
+<a mat-button *ngIf="!userIsAuthenticated" routerLink="/login" routerLinkActive="mat-accent" class="btnMenu loginBtn">LOGIN</a>
+<button mat-button *ngIf="userIsAuthenticated" (click)="onLogout()" routerLinkActive="mat-accent" class="btnMenu loginBtn">LOGOUT</button>
