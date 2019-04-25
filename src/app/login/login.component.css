@@ -1,0 +1,232 @@
+mat-spinner {
+margin: auto;
+}
+.primaryColorMenu{
+    color: black;
+}
+
+main {
+margin-top: 1rem;
+}
+
+a {
+text-decoration: none;
+color: white;
+}
+
+.spacer {
+flex: 1 1 auto;
+}
+
+#imageBanner {
+position: absolute;
+margin-left: 25%;
+margin-right: 25%;
+}
+
+#imageBanner img {
+width: 100%;
+}
+
+#passLogin {
+width: 75%;
+}
+
+#emailLogin {
+width: 75%;
+}
+
+.formoverlay {
+width: 25%;
+height: auto;
+margin: auto;
+padding-top: 6em;
+}
+
+.formoverlay mat-card {
+padding: 0;
+}
+
+.formoverlay mat-card-title {
+padding: 1.4em;
+margin-bottom: 0px;
+color:slategrey;
+font-size: 1.3rem;
+}
+
+.formoverlay mat-card-content {
+padding: 1rem;
+}
+
+.spacer {
+height: 8em;
+}
+.textCenter{
+    text-align: center;
+  }
+
+#signupbutton {
+width: 50%;
+padding: 0.8em;
+border: 0;
+}
+
+/********************MEDIA QUERIES***************************/
+
+/*********4K UHD DISPLAY*********/
+@media all and (min-width: 2561px) and (max-width:3840px) {
+.spacer {
+    height: 12em;
+}
+#imageBanner {
+    width: 50%;
+}
+}
+
+/*********QHD DISPLAY*********/
+@media all and (min-width: 1921px) and (max-width:2560px){
+#imageBanner{
+    width: 50%;
+}
+}
+
+/*********FHD DISPLAY*********/
+@media all and (min-width: 1601px) and (max-width:1920px){
+
+}
+
+/*********HD+ DISPLAY*********/
+@media all and (min-width: 1441px) and (max-width: 1600px) { 
+.formoverlay {
+    width: 35%;
+}
+.spacer {
+    height: 6em;
+}
+}
+
+/*********HD DISPLAY*********/
+@media all and (min-width: 1281px) and (max-width:1440px){
+.formoverlay {
+    width: 40%;
+}
+.spacer {
+    height: 5.5em;
+}
+}
+
+/*********DESKTOP SXGA*********/
+@media all and (min-width: 1025px) and (max-width:1280px){
+.formoverlay {
+    width: 35%;
+}
+.spacer {
+    height: 4em;
+}
+}
+
+@media all and (max-width:1224px) {
+.formoverlay {
+    width: 45%;
+    height: auto;
+    margin: auto;
+    padding-top: 3rem;
+}
+
+.spacer {
+    height: 6em;
+}
+}
+
+@media all and (max-width: 1024px) {
+#imageBanner {
+    position: absolute;
+}
+
+.formoverlay {
+    width: 55%;
+    height: auto;
+    margin: auto;
+    padding-top: 1.4rem;
+}
+
+mat-form-field {
+    width: 70%;
+}
+
+.spacer {
+    height: 4.5em;
+}
+
+}
+
+@media all and (max-width: 980px) {
+#imageBanner {
+    width: 100%;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+.formoverlay {
+    width: 60%;
+    height: auto;
+    margin: auto;
+    padding-top: 1.4rem;
+}
+
+mat-form-field {
+    width: 70%;
+}
+
+.spacer {
+    height: 5em;
+}
+}
+
+@media all and (max-width: 736px) {
+#imageBanner {
+    width: 100%;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+.formoverlay {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding-top: 1.4rem;
+}
+
+mat-form-field {
+    width: 70%;
+}
+
+.spacer {
+    height: 5em;
+}
+
+}
+
+@media all and (max-width: 480px) {
+#imageBanner {
+    width: 100%;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+.formoverlay {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    padding-top: 1.4rem;
+}
+
+mat-form-field {
+    width: 70%;
+}
+
+.spacer {
+    height: 4em;
+}
+
+}
