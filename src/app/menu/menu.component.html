@@ -1,2 +1,6 @@
+
+<a mat-button routerLink="/" routerLinkActive="mat-accent" class="btnMenu loginBtn">HOME</a>
 <a mat-button *ngIf="!userIsAuthenticated" routerLink="/login" routerLinkActive="mat-accent" class="btnMenu loginBtn">LOGIN</a>
 <button mat-button *ngIf="userIsAuthenticated" (click)="onLogout()" routerLinkActive="mat-accent" class="btnMenu loginBtn">LOGOUT</button>
+<a mat-button routerLink="/donor" routerLinkActive="mat-accent" class="btnMenu loginBtn">DONOR</a>
+<a mat-button routerLink="/agency" routerLinkActive="mat-accent" class="btnMenu loginBtn">AGENCY</a>

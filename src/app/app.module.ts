@@ -35,6 +35,8 @@ import { MatAutocompleteModule,
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { DonorProfileComponent } from './donor-profile/donor-profile.component';
+import { AgencyProfileComponent } from './agency-profile/agency-profile.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { SignupComponent } from './signup/signup.component';
     FooterComponent,
     MenuComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    DonorProfileComponent,
+    AgencyProfileComponent
   ],
   imports: [
     BrowserModule,
