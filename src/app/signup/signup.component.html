@@ -54,7 +54,7 @@
           <div fxFlex="50%" class="textCenter">
             <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
               <div fxFlex="100%" class="textCenter">
-                <mat-slide-toggle id="acceptedTerms" name="accept_terms" class="formToggle" [(ngModel)]="accept_terms" required="required" #terms="ngModel">Accept <a routerLink="/terms" target="_blank" class="termsLink primaryColor">Terms &amp; Conditions</a>?</mat-slide-toggle>
+                <mat-slide-toggle id="acceptedTerms" name="accept_terms" class="formToggle" [(ngModel)]="accept_terms" required="required" #terms="ngModel">Accept <a routerLink="/terms" target="_blank" class="termsLink primaryColorMenu">Terms &amp; Conditions</a>?</mat-slide-toggle>
               </div>
             </div>
             <mat-spinner *ngIf="isLoading"></mat-spinner>
@@ -63,7 +63,7 @@
         </div>
         <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
           <div fxFlex="100%" class="textCenter">
-            <button mat-button tabindex="0" class="textCenter btnSecondary" *ngIf="!accept_terms" type="submit" id="signupbutton" disabled>SIGN UP</button>
+            <button mat-button tabindex="0" class="textCenter btnPrimary" *ngIf="!accept_terms" type="submit" id="signupbutton" disabled>SIGN UP</button>
             <button mat-button tabindex="0" class="textCenter btnPrimary" *ngIf="accept_terms" type="submit" id="signupbutton">SIGN UP</button>
             <div *ngIf="passMatch">
               <span class="dangerColor">
