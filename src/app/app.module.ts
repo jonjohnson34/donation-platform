@@ -37,6 +37,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DonorProfileComponent } from './donor-profile/donor-profile.component';
 import { AgencyProfileComponent } from './agency-profile/agency-profile.component';
+import { ProgramCreateComponent } from './program/program-create/program-create.component';
+import { ProgramEditComponent } from './program/program-edit/program-edit.component';
+import { ProgramListComponent } from './program/program-list/program-list.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { AgencyProfileComponent } from './agency-profile/agency-profile.componen
     LoginComponent,
     SignupComponent,
     DonorProfileComponent,
-    AgencyProfileComponent
+    AgencyProfileComponent,
+    ProgramCreateComponent,
+    ProgramEditComponent,
+    ProgramListComponent
   ],
   imports: [
     BrowserModule,
