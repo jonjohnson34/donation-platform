@@ -1,0 +1,308 @@
+section {
+    padding-bottom: 3rem;
+  }
+  
+  mat-spinner {
+    margin: auto;
+  }
+  
+  .textCenter{
+    text-align: center;
+  }
+
+  .spacer{
+    height: 6em;
+  }
+  
+  .imagePreview {
+    /* height: 5rem; */
+    margin: 1rem 0;
+  }
+  
+  .imagePreview img {
+    width: 100%;
+  }
+  
+  .formContainer{
+    -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+    box-shadow: none;
+    color:slategray;
+    height: 100%;
+  }
+  
+  #imageBanner{
+    /*height: 214px;*/
+    position: absolute;
+    width: 100%;
+  }
+  
+  #imageBanner img{
+    width: 100%;
+  }
+  
+  .image-overlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 3%;
+    margin-top: 30px;
+  }
+  .image-overlay h1{
+    font-size: 48px;
+  }
+  #formSubtitle{
+    width: 30%;
+    margin: 0px auto;
+  }
+  .formoverlay{
+    width: 70%;
+    height: auto;
+    margin: auto;
+    padding-top: 3em;
+  }
+  .formoverlay mat-card{
+    padding: 0;
+  }
+  .formoverlay mat-card-title{
+    padding: 0.5rem;
+    color: slategrey;
+    font-size: 1.75rem;
+    font-weight: 500;
+    padding-block-start: -50px;
+    text-align: center;
+  }
+  
+  .mat-card-title img{
+    width: 10%;
+  }
+  
+  .formoverlay mat-card-content{
+    padding: 1rem;
+  }
+  .formSelect{
+    width: 50%;
+  }
+  .formToggle{
+    text-align: left;
+    float: left;
+    display: block;
+    width: 100%;
+    margin-left: 6em;
+    color:rgba(0,0,0,.2);
+  }
+  
+  #tenant_responsibilities{
+    text-align: left;
+  }
+  #btnSave{
+    margin: 2em auto;
+  }
+  #parkSelect{
+    width: 75%;
+  }
+  #basementToggle {
+    padding-top: 1.1em;
+  }
+  .imageHolder {
+    height: 100%;
+    width: 80%;
+    overflow: hidden;
+    margin: 0.5em auto;
+  }
+  .propPic {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px !important;
+  }
+  #photosAndMedia input {
+    display: none;
+  }
+  .rowPicBtns {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /********************MEDIA QUERIES***************************/
+  
+  /*********4K UHD DISPLAY*********/
+  @media all and (min-width: 2561px) and (max-width:3840px) {
+    .formoverlay {
+      width: 30%;
+    }
+    mat-form-field, .formSelect{
+      width: 60%;
+    }
+    .formToggle{
+      margin-left: 7em;
+    }
+  }
+  
+  /*********QHD DISPLAY*********/
+  @media all and (min-width: 1921px) and (max-width:2560px){
+    .formoverlay {
+      width: 40%;
+    }
+    mat-form-field, .formSelect{
+      width: 60%;
+    }
+    .formToggle{
+      margin-left: 7em;
+    }
+  }
+  
+  /*********FHD DISPLAY*********/
+  @media all and (min-width: 1601px) and (max-width:1920px){
+    .formoverlay {
+      width: 40%;
+    }
+    mat-form-field, .formSelect{
+      width: 60%;
+    }
+    .formToggle{
+      margin-left: 5em;
+    }
+  }
+  
+  /*********HD+ DISPLAY*********/
+  @media all and (min-width: 1441px) and (max-width: 1600px) { 
+    .formoverlay {
+      width: 45%;
+    }
+    mat-form-field, .formSelect{
+      width: 60%;
+    }
+    .formToggle{
+      margin-left: 5em;
+    }
+  }
+  
+  /*********HD DISPLAY*********/
+  @media all and (min-width: 1281px) and (max-width:1440px){
+    .formoverlay {
+      width: 55%;
+    }
+    mat-form-field, .formSelect{
+      width: 60%;
+    }
+    .formToggle{
+      margin-left: 5em;
+    }
+  }
+  
+  /*********DESKTOP SXGA*********/
+  @media all and (min-width: 1025px) and (max-width:1280px){
+    .formoverlay {
+      width: 55%;
+    }
+    mat-form-field, .formSelect{
+      width: 60%;
+    }
+    .formToggle{
+      margin-left: 5em;
+    }
+  }
+  
+  @media all and (max-width: 1024px) {
+    .image-overlay {
+      padding-top: 8%;
+    }
+    .image-overlay h1{
+      font-size: 36px;
+    }
+    #formSubtitle{
+      width: 100%;
+      margin: 0px auto;
+    }
+    #formSubtitle h4{
+      font-size: 20px;
+    }
+    .formoverlay {
+      width: 70%;
+      height: auto;
+      margin: auto;
+      padding-top: 2em;
+    }
+    mat-form-field, .formSelect{
+      width: 60% !important;
+    }
+    .formToggle{
+      margin-left: 5em;
+    }
+  }
+  @media all and (max-width: 980px) {
+    .image-overlay {
+      padding-top: 8%;
+    }
+    .image-overlay h1{
+      font-size: 36px;
+    }
+    #formSubtitle{
+      width: 100%;
+      margin: 0px auto;
+    }
+    #formSubtitle h4{
+      font-size: 20px;
+    }
+    .formoverlay {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      padding-top: 2em;
+    }
+    mat-form-field, .formSelect{
+      width: 60% !important;
+    }
+    .formToggle{
+      margin-left: 4em;
+    }
+  }
+  @media all and (max-width: 736px) {
+    .image-overlay {
+      padding-top: 6%;
+    }
+    .image-overlay h1{
+      font-size: 36px;
+    }
+    #formSubtitle{
+      width: 80%;
+      margin: 0px auto;
+    }
+    .formoverlay {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      padding-top: 1em;
+    }
+    mat-form-field, .formSelect{
+      width: 60% !important;
+    }
+  }
+  @media all and (max-width: 480px) {
+    .image-overlay {
+      padding-top: 2%;
+    }
+    .image-overlay h1{
+      font-size: 24px;
+    }
+    #formSubtitle{
+      width: 100%;
+      margin: 0px auto;
+    }
+    #formSubtitle h4{
+      font-size: 16px;
+    }
+    .formoverlay {
+      width: 100%;
+      height: auto;
+      margin: auto;
+      padding-top: 1em;
+    }
+    mat-form-field{
+      width: 75% !important;
+    }
+    .formToggle{
+      margin-left: 3em;
+    }
+   }
+  
