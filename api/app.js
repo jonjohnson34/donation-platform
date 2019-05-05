@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
 const userRoutes = require('./routes/user');
-
+const programRoutes = require('./routes/program');
+const agencyRoutes = require('./routes/agency');
+const donorRoutes = require('./routes/donor');
 
 // MONGO ATLAS PROD
 // mongoose.connect("mongodb+srv://" + process.env.MONGO_ATLAS_USER + ":" + process.env.MONGO_ATLAS_PASS + "@burbz-mjz62.mongodb.net/burbz-main", { useNewUrlParser: true })
@@ -34,7 +36,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/user', userRoutes);
+app.use('/api/user',      userRoutes);
+app.use('/api/program',   programRoutes);
+app.use('/api/agency',    agencyRoutes);
+app.use('/api/donor',     donorRoutes)
 
 
 module.exports = app;
