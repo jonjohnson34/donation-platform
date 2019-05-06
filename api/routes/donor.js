@@ -5,7 +5,6 @@ const donorController = require('../controllers/donor');
 
 /************POST ROUTES ***************/
 router.post('/create', checkAuth, donorController.createDonor);
-
 /************POST ROUTES ***************/
 
 /************PUT ROUTES ***************/

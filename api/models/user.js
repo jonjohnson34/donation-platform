@@ -24,6 +24,11 @@ const userSchema = mongoose.Schema({
     role: { //donor, agency, admin
         type: String,
         require: true
+    },
+    created_on: {
+        type: Date,
+        required: true,
+        default: new Date()
     } 
 });
 
