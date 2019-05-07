@@ -21,6 +21,16 @@ const programSchema = mongoose.Schema({
         type: Date,
         required: true,
         default: new Date()
+    },
+    user_creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    agency_creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Agency',
+        required: true
     }
 });
 

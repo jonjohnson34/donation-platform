@@ -10,7 +10,7 @@ router.post('/login', userController.userLogin);
 /*********POST ROUTES ***********/
 
 /************************** GET ROUTES **************************/
-router.get("/:id", checkAuth, userController.getOneUser);
+//router.get("/:id", checkAuth, userController.getOneUser);
 /************************** GET ROUTES **************************/
 
 /************DELETE ROUTES ***************/

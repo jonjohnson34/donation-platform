@@ -13,8 +13,8 @@ router.put('/edit/:id', checkAuth, programController.updateProgram);
 /************PUT ROUTES ***************/
 
 /************GET ROUTES ***************/
-router.get('/getAllPrograms', checkAuth, programController.getAllPrograms);
-router.get('/getOneProgram/:id', checkAuth, programController.getOnePrograms);
+//router.get('/getAllPrograms', checkAuth, programController.getAllPrograms);
+//router.get('/getOneProgram/:id', checkAuth, programController.getOnePrograms);
 /************GET ROUTES ***************/
 
 /************DELETE ROUTES ***************/

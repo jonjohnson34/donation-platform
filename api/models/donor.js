@@ -7,7 +7,7 @@ const donorSchema = mongoose.Schema({
     },
     address_2: {
         type: String,
-        required: true
+        required: false
     },
     city: {
         type: String,
@@ -25,6 +25,11 @@ const donorSchema = mongoose.Schema({
         type: Date,
         required: true,
         default: new Date()
+    },
+    user_creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: false
     }
 });
 

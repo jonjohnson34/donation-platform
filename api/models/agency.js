@@ -2,7 +2,7 @@
 
 const mongoose = require("mongoose");
 
-const donorSchema = mongoose.Schema({
+const agencySchema = mongoose.Schema({
     agency_name: {
         type: String, 
         required: true
@@ -31,10 +31,19 @@ const donorSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    validated: {
+        type: Boolean,
+        default: false
+    },
     created_on: {
         type: Date,
         required: true,
         default: new Date()
+    }, 
+    user_creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 });
 

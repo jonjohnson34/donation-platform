@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const Program = require('../models/program');
 
 exports.createProgram = (req, res, next) => {
+    const newProgram = {
 
+    }
+    
 }
 
 exports.updateProgram = (req, res, next) => {
