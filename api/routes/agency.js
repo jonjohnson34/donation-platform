@@ -12,7 +12,7 @@ router.put('/edit/:id', checkAuth, agencyController.updateAgency);
 /************PUT ROUTES ***************/
 
 /************GET ROUTES ***************/
-//router.get('/getOneAgency/:id', checkAuth, agencyController.getOneAgency);
+router.get('/getOneAgency/:id', checkAuth, agencyController.getOneAgency);
 /************GET ROUTES ***************/
 
 /************DELETE ROUTES ***************/
