@@ -35,7 +35,13 @@ exports.userLogin = (req, res, next) => {
 };
 
 exports.getOneUser = (req, res, next) => {
-    User.findOne
+    User.findOne({ _id: req.params.id })
+        .exec().then(result => {
+            res.status(200).json({
+                message: 'User Found',
+                result: result
+            });
+        });
 };
 
 exports.removeUser = (req, res, next) => {

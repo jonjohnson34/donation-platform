@@ -8,7 +8,7 @@ exports.createDonor = (req, res, next) => {
         city: req.body.city,
         state: req.body.state,
         zip_code: req.body.zip_code,
-    //    user_creator: req.userData.userID
+        user_creator: req.userData.userID
     });
 
     newDonor.save().then(result => {
@@ -20,13 +20,37 @@ exports.createDonor = (req, res, next) => {
 }
 
 exports.updateDonor = (req, res, next) => { 
-
+    Donor.update( { _id: req.params.id }, {  
+        $set: {
+            address_1: req.body.address_1,
+            address_2: req.body.address_2,
+            city: req.body.city,
+            state: req.body.state,
+            zip_code: req.body.zip_code,    
+        }
+    }).exec().then(result => {
+      res.status(200).json({
+          message: 'Your Profile has been updated',
+          result: result
+      });  
+    });
 }
 
 exports.getDonor = (req, res, next) => {
-
+    Donor.findById({ _id: req.params.id })
+        .exec().then(result => {
+            res.status(200).json({
+                message: 'Donor Found',
+                result: result
+            });
+        });
 }
  
 exports.removeDonor = (req, res, next) => {
-    
+    Donor.deleteOne({ _id: req.params.id })
+        .then(result => {
+            res.status(200).json({
+                message: 'Donor Removed'
+            });
+        });
 }

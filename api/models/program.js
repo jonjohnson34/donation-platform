@@ -15,7 +15,8 @@ const programSchema = mongoose.Schema({
     },
     amount_donated:{
         type: Number, 
-        required: true
+        required: true,
+        default: 0
     },
     created_on: {
         type: Date,
