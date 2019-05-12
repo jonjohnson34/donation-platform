@@ -41,6 +41,8 @@ exports.getOneUser = (req, res, next) => {
                 message: 'User Found',
                 result: result
             });
+        }).catch(error => {
+            res.status(500).json({ message: error });
         });
 };
 
@@ -51,6 +53,8 @@ exports.removeUser = (req, res, next) => {
                 message: 'User Removed from database',
                 result: result
             });
+        }).catch(error => {
+            res.status(500).json({ message: error });
         });
 };
 

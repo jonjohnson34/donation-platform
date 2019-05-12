@@ -17,7 +17,7 @@ const agencySchema = mongoose.Schema({
     },
     address_2: {
         type: String,
-        required: true
+        required: false
     },
     city: {
         type: String,
@@ -43,7 +43,7 @@ const agencySchema = mongoose.Schema({
     user_creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        required: false
     }
 });
 

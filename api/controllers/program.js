@@ -8,14 +8,16 @@ exports.createProgram = (req, res, next) => {
         amount_requested: req.body.amount_requested,
         amount_donated: req.body.amount_donated,
         //user_creator: req.userID.userID,
-        //agency_creator: req.body.agnecyID
+        //agency_creator: req.body.agencyID
     }
 
     Program.save().then(result => {
         res.status(200).json({
             message: 'New Program Created',
-            result: result
+            data: result
         });
+    }).catch(error => {
+        res.status(500).json({ message: error.message });
     });
     
 }
@@ -28,7 +30,14 @@ exports.updateProgram = (req, res, next) => {
             amount_requested: req.body.amount_requested,
             amount_donated: req.body.amount_donated,
         }
-    });
+    }).then(results => {
+        res.status(200).json({
+            message: 'Program Updated',
+            data: results
+        })
+    }).catch(error => {
+        res.status(500).json({ message: error.message });
+    });;
 }
 
 exports.getAllPrograms = (req, res, next) => {
@@ -36,8 +45,10 @@ exports.getAllPrograms = (req, res, next) => {
         .then(result => {
             res.status(200).json({
                 message: 'All Programs Found',
-                result: result
+                data: result
             });
+        }).catch(error => {
+            res.status(500).json({ message: error.message });
         });
 }
 
@@ -46,8 +57,10 @@ exports.getOneProgram = (req, res, next) => {
         .exec().then(result => {
             res.status(200).json({
                 message: 'Program Found',
-                result: result
+                data: result
             });
+        }).catch(error => {
+            res.status(500).json({ message: error.message });
         });
 }
 
@@ -57,5 +70,7 @@ exports.removeProgram = (req, res, next) => {
             res.status(200).json({
                 message: 'Program Removed'
             });
+        }).catch(error => {
+            res.status(500).json({ message: error.message });
         });
 }

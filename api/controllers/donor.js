@@ -14,8 +14,10 @@ exports.createDonor = (req, res, next) => {
     newDonor.save().then(result => {
         res.status(200).json({
             message: 'New Donor Profile Created',
-            result: result
+            data: result
         });
+    }).catch(error => {
+        res.status(500).json({ message: error.message });
     });
 }
 
@@ -31,8 +33,10 @@ exports.updateDonor = (req, res, next) => {
     }).exec().then(result => {
       res.status(200).json({
           message: 'Your Profile has been updated',
-          result: result
+          data: result
       });  
+    }).catch(error => {
+        res.status(500).json({ message: error.message });
     });
 }
 
@@ -41,8 +45,10 @@ exports.getDonor = (req, res, next) => {
         .exec().then(result => {
             res.status(200).json({
                 message: 'Donor Found',
-                result: result
+                data: result
             });
+        }).catch(error => {
+            res.status(500).json({ message: error.message });
         });
 }
  
@@ -52,5 +58,7 @@ exports.removeDonor = (req, res, next) => {
             res.status(200).json({
                 message: 'Donor Removed'
             });
+        }).catch(error => {
+            res.status(500).json({ message: error.message });
         });
 }
