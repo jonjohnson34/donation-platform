@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from '../app/homepage/homepage.component';
-import { LoginComponent } from '../app/login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 import { DonorProfileComponent } from './donor-profile/donor-profile.component';
 import { AgencyProfileComponent } from './agency-profile/agency-profile.component';
 import { ProgramCreateComponent } from './program/program-create/program-create.component';

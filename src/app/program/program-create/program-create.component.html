@@ -1,12 +1,12 @@
 <div class="formoverlay">
-  <form (sumbit)="onSubmit(programForm)" #programform="ngForm" id="programForm">
+  <form [formGroup]="form" (ngSubmit)="onSaveProgram()" id="programForm">
     <mat-card>
       <mat-card-title>ADD A PROGRAM TO BE FUNDED</mat-card-title>
       <mat-card-content>
           <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
             <div fxFlex="45%" class="textCenter">
               <mat-form-field>
-                <input matInput type="text" placeholder="Program Name" required>
+                <input matInput type="text" placeholder="Program Name" formControlName="programName" required>
                 <mat-error *ngIf="">Please enter the program name</mat-error>
               </mat-form-field>
             </div>
@@ -17,6 +17,7 @@
                   cdkAutosizeMinRows="10"
                   cdkAutosizeMaxRows="30"
                   placeholder="Please enter a short Description of the program you want funded" 
+                  formControlName="programDesc"
                   required>
                 </textarea>
                 <mat-error *ngIf="">Please enter a short Description</mat-error>
@@ -24,14 +25,17 @@
             </div>
             <div fxFlex="45%" class="textCenter">
               <mat-form-field>
-                <input matInput type="number" min="500" max="2500" placeholder="Enter Amount Requested" required>
+                <input matInput type="number" min="500" max="2500" placeholder="Enter Amount Requested" formControlName="amountRequested" required>
                 <mat-error *ngIf="">Please Enter an Amount betwwen $500 and $2500</mat-error>
               </mat-form-field>
             </div>
-          
-          </div>
-          
+          </div>          
       </mat-card-content>
     </mat-card>
+    <br>
+
+    <a mat-raised-button (click)="cancel()">Cancel</a> &nbsp;
+    <button mat-raised-button class="btnPrimary" type="submit" id="btnSave">Save</button>
+  
   </form>
 </div>
