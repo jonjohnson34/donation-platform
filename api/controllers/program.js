@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const Program = require('../models/program');
 
 exports.createProgram = (req, res, next) => {
-    const newProgram = {
+    const newProgram = new Program ({
         program_name: req.body.program_name,
         program_desc: req.body.program_desc,
         amount_requested: req.body.amount_requested,
         amount_donated: req.body.amount_donated,
         //user_creator: req.userID.userID,
         //agency_creator: req.body.agencyID
-    }
+    });
 
-    Program.save().then(result => {
+    newProgram.save().then(result => {
         res.status(200).json({
             message: 'New Program Created',
             data: result

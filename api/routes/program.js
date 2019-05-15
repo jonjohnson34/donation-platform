@@ -4,7 +4,7 @@ const checkAuth = require("../middlewares/check-auth");
 const programController = require('../controllers/program');
 
 /************POST ROUTES ***************/
-router.post('/create', checkAuth, programController.createProgram);
+router.post('/create', programController.createProgram); //Re add checkAuth
 
 /************POST ROUTES ***************/
 
@@ -13,7 +13,7 @@ router.put('/edit/:id', checkAuth, programController.updateProgram);
 /************PUT ROUTES ***************/
 
 /************GET ROUTES ***************/
-//router.get('/getAllPrograms', checkAuth, programController.getAllPrograms);
+router.get('/getAllPrograms', programController.getAllPrograms);
 //router.get('/getOneProgram/:id', checkAuth, programController.getOnePrograms);
 /************GET ROUTES ***************/
 

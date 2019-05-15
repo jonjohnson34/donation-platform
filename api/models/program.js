@@ -26,12 +26,12 @@ const programSchema = mongoose.Schema({
     user_creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        required: false
     },
     agency_creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Agency',
-        required: true
+        required: false
     }
 });
 

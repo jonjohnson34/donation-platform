@@ -6,4 +6,3 @@ export interface AuthData {
     phone_number: string;
     role: string;
   }
-  

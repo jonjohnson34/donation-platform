@@ -1,15 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ProgramService } from '../program.service';
+import { Program } from '../program.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-program-list',
   templateUrl: './program-list.component.html',
   styleUrls: ['./program-list.component.css']
 })
-export class ProgramListComponent implements OnInit {
+export class ProgramListComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  dataSource: Program[] = [];
+  displayedColumns = ['name', 'desc', 'amount', 'donated', 'edit', 'archive'];
+  private programSub: Subscription;
+  programs: Program[] = [];
+ 
+  constructor(
+    private programService: ProgramService
+  ) { }
 
   ngOnInit() {
+    this.programService.getPrograms();
+    this.programSub = this.programService
+      .getProgramUpdateListener()
+      .subscribe((programs: Program[]) => {
+        this.programs = programs;
+      });
+  }
+  
+
+  ngOnDestroy(){
+    this.programSub.unsubscribe();
   }
 
 }
