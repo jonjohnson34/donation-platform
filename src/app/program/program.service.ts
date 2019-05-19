@@ -30,7 +30,6 @@ export class ProgramService {
       amount_requested: amountRequested
     };
 
-    // console.log(programData);
     this.http.post<{ message: string, data: any }>(BACKEND_URL + '/create', programData)
       .subscribe(response => {
         const program = {
@@ -39,7 +38,7 @@ export class ProgramService {
           amountRequested: response.data.amount_requested,
           amountFunded: response.data.amount_donated
         };
-        console.log(response.data);
+        this.router.navigate(['/program']);
       });
   }
 

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,
   FormControl,
   Validators} from '@angular/forms';
-import { Subscription } from 'rxjs';
 import { Location } from '@angular/common';
 import { ProgramService } from '../program.service';
 
@@ -28,16 +27,17 @@ export class ProgramCreateComponent implements OnInit {
     });
   }
 
-  onSaveProgram(){
-    if (!this.form.valid){
+  onSaveProgram() {
+    if (!this.form.valid) {
       return;
     } else {
       this.program.createProgram(this.form.value.programName, this.form.value.programDesc, this.form.value.amountRequested);
     }
+
   }
 
-  cancel(){
-    alert('this cancels');
+  cancel() {
+    this.location.back();
   }
 
 }

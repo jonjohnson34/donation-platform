@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProgramService } from '../program.service';
 import { Program } from '../program.model';
-import { Subscription } from 'rxjs';
+import { Subscription, from } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-program-list',
@@ -14,9 +15,10 @@ export class ProgramListComponent implements OnInit, OnDestroy {
   displayedColumns = ['name', 'desc', 'amount', 'donated', 'edit', 'archive'];
   private programSub: Subscription;
   programs: Program[] = [];
- 
+
   constructor(
-    private programService: ProgramService
+    private programService: ProgramService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -27,9 +29,13 @@ export class ProgramListComponent implements OnInit, OnDestroy {
         this.programs = programs;
       });
   }
-  
 
-  ngOnDestroy(){
+  onCreateClick() {
+    this.router.navigate(['/program/create']);
+  }
+
+
+  ngOnDestroy() {
     this.programSub.unsubscribe();
   }
 
