@@ -58,23 +58,23 @@ export class AuthService {
       });
   }
 
-  createUser(email: string, first_name: string, last_name: string, password: string, phone_number: string, role: string) {
+  createUser(email: string, first_name: string, last_name: string, password: string, role: string) {
     const authData: AuthData = {
       email: email,
       first_name: first_name,
       last_name: last_name,
       password: password,
-      phone_number: phone_number,
       role: role
     };
+    console.log(authData);
 
     this.http.post(BACKEND_URL + '/signup', authData)
       .subscribe(response => {
         // this.login(authData.email, authData.password);
-        if (authData.role === 'investor') {
-          this.router.navigate(['/welcome-investor']);
-        } else if (authData.role === 'manager') {
-          this.router.navigate(['/welcome-manager']);
+        if (authData.role === 'donor') {
+          this.router.navigate(['/donor']);
+        } else if (authData.role === 'agency') {
+          this.router.navigate(['/agency']);
         } else {
           this.router.navigate(['/login']);
         }
