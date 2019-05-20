@@ -6,7 +6,7 @@ const userController = require('../controllers/user');
 
 /*********POST ROUTES ***********/
 router.post('/signup', userController.createUser);
-//router.post('/login', userController.userLogin);
+router.post('/login', userController.userLogin);
 /*********POST ROUTES ***********/
 
 /************************** GET ROUTES **************************/

@@ -6,7 +6,6 @@ import { AuthData } from './auth-data.model';
 import { tokenKey } from '@angular/core/src/view';
 import { environment } from '../../environments/environment';
 import { EmailValidator } from '@angular/forms';
-// A service is an AngularJS class intended to inject data from backend to frontend
 
 const BACKEND_URL = environment.apiURL + '/user';
 
@@ -113,10 +112,10 @@ export class AuthService {
           this.saveAuthData(token, expirationDate, this.userID, this.role);
           if (this.redirect_url !== '') {
             this.router.navigateByUrl(this.redirect_url);
-          } else if (this.role.toUpperCase() === 'INVESTOR') {
-            this.router.navigate(['/dashboard/investor']);
-          } else if (this.role.toUpperCase() === 'MANAGER') {
-            this.router.navigate(['/dashboard/manager']);
+          } else if (this.role.toUpperCase() === 'AGENCY') {
+            this.router.navigate(['/program']);
+          } else if (this.role.toUpperCase() === 'DONOR') {
+            this.router.navigate(['/program']);
           } else if (this.role.toUpperCase() === 'AGENT') {
             this.router.navigate(['/dashboard/agent']);
           }

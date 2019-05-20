@@ -7,20 +7,22 @@ exports.createUser = (req, res, next) => {
     User.findOne({ email: req.body.email }).exec()
         .then(user => {
             if (!user) {
-                const newUser = new User({
-                    first_name: req.body.first_name,
-                    last_name: req.body.last_name,
-                    email: req.body.email,
-                    password: req.body.password,
-                    role: req.body.role
-                });
-
-                newUser.save().then(result => {
-                    res.status(200).json({
-                        message: 'New user created',
-                        result: result
+                bcrypt.hash(req.body.password, 8)
+                    .then(hashedPassword => {
+                        const newUser = new User({
+                            first_name: req.body.first_name,
+                            last_name: req.body.last_name,
+                            email: req.body.email,
+                            password: hashedPassword,
+                            role: req.body.role
+                        });
+                        newUser.save().then(result => {
+                            res.status(200).json({
+                                message: 'New user created',
+                                result: result
+                            });
+                        });
                     });
-                });
             }
             else {
                 return res.status(401).json({
@@ -30,7 +32,56 @@ exports.createUser = (req, res, next) => {
         });
 };
 
-exports.userLogin = (req, res, next) => {
+exports.userLogin = (req, res   ) => {
+    let fetchedUser;
+    let email = req.body.email;
+    let pass = req.body.password;
+    User.findOne({ email: email }).exec()
+      .then(user => {
+        if (!user) {
+          return res.status(401).json({
+            message: 'Login failed, invalid user email or user password.'
+          });
+        }
+  
+        fetchedUser = user;
+        bcrypt.compare(pass, user.password, (err, result) => {
+          if (err) {
+            return res.status(401).json({
+              message: 'Authentication failed.'
+            });
+          } if (result) {
+            const token = jwt.sign(
+              {
+                email: fetchedUser.email,
+                userID: fetchedUser._id,
+                role: fetchedUser.role,
+                first_name: fetchedUser.first_name,
+                last_name: fetchedUser.last_name,
+                phone_number: fetchedUser.phone_number
+              }, 'I am an idito,',
+             // process.env.JWT_KEY,
+              { expiresIn: '1h' }
+            );
+  
+            res.status(200).json({
+              token: token,
+              expiresIn: 3600,
+              userID: fetchedUser._id,
+              role: fetchedUser.role
+            });
+          } else {
+            return res.status(401).json({
+              message: 'Login failed, invalid user email or user password.'
+            });
+          }
+        });
+      })
+      .catch(err => {
+        return res.status(401).json({
+          message: 'Authentication failed.'
+        });
+      });
     
 };
 

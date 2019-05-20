@@ -3,6 +3,7 @@ import { ProgramService } from '../program.service';
 import { Program } from '../program.model';
 import { Subscription, from } from 'rxjs';
 import { Router } from '@angular/router';
+import { AuthService } from '../../auth/auth.service'; 
 
 @Component({
   selector: 'app-program-list',
@@ -15,10 +16,12 @@ export class ProgramListComponent implements OnInit, OnDestroy {
   displayedColumns = ['name', 'desc', 'amount', 'donated', 'edit', 'archive'];
   private programSub: Subscription;
   programs: Program[] = [];
+  userRole: String;
 
   constructor(
     private programService: ProgramService,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) { }
 
   ngOnInit() {
@@ -28,6 +31,7 @@ export class ProgramListComponent implements OnInit, OnDestroy {
       .subscribe((programs: Program[]) => {
         this.programs = programs;
       });
+    this.userRole = this.auth.getRole();
   }
 
   onCreateClick() {
